@@ -1,2 +1,0 @@
-# sandysite.github.io
-web
