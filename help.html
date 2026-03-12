@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sandysite</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="icon" type="image/x-icon" href="./Resources/Images/cooltext503822088148961.ico">
+    </head>
+    <body>
+        <img class="headingImg" src="./Resources/Images/heading.gif">
+        <div class="divider"></div>
+        <p class="text">
+            welcome to study help!!!
+        </p>
+        <button class="fullButton" id="shareLinkButton">Copy Share Link</button>
+        <div class="divider"></div>
+        <div>
+            <img src="./Resources/Images/Controller.png" class="customemoji">
+            <img src="./Resources/Images/House.png" class="customemoji">
+            <img src="./Resources/Images/Book.png" class="customemoji">
+            <img src="./Resources/Images/phone.png" class="customemoji">
+        </div>
+        <div class="menubar">
+            <button class="menubarbuttonleft" onclick="location.href='./games.html'" title="Play some fun hand-picked games!">Games</button>
+            <button class="menubarbuttonmiddle" onclick="location.href='./index.html'" title="Visit the sandysite homepage.">Home</button>
+            <button class="menubarbuttonmiddle" onclick="location.href='./help.html'" title="Get some help with schoolwork.">Help</button>
+            <button class="menubarbuttonright" onclick="location.href='./contact.html'" title="Have a suggestion? Want your game taken down? Contact me here.">Contact Me</button>
+        </div>
+        <p class="text">
+            Here you can learn some strategies for some subjects that may or may not be helpful.<br>
+            If you wish for anything to be added, please contact me at the Contact Page.<br>
+        </p>
+        <div class="divider"></div>
+        <button class="fullButton" onclick="location.href='./Subpages/mathhelp.html'" title="Get some help in maths.">Mathematics</button>
+    </body>
+    <script type="module">
+        import { springyEmojiCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+
+        new springyEmojiCursor({ emoji: "🅱️" });
+    </script>
+    <script>
+        document.getElementById('shareLinkButton').addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(window.location.href);
+    
+                alert('Link copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy link, ', err);
+            }
+        });
+    </script>
+</html>
