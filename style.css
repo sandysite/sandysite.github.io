@@ -1,0 +1,15 @@
+:root {
+  color-scheme: light dark;
+  --bg-color: #f7f7f7;
+  --text-color: #000;
+  --cont-color: #9f9f9f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #101010;
+    --text-color: #ffffff;
+    --cont-color: #313131;
+  }
+}
+
