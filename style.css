@@ -41,19 +41,37 @@ body {
   background-color: var(--cont-color);
 }
 
-/* --- CUSTOM DROPDOWN MECHANICS (Add your styling here) --- */
 .custom-dropdown {
   position: relative;
   cursor: pointer;
+  padding: 5px 10px;
+  background: var(--cont-color);
+  border: 0;
+  border-radius: 16px;
 }
 
 .dropdown-options {
-  display: none; /* Keeps options hidden until toggled */
+  display: none;
   position: absolute;
   z-index: 999;
+  background: var(--cont-color);
+  border: 0;
+  border-radius: 16px;
 }
 
-/* JavaScript toggles this class to show the options menu */
 .dropdown-options.open {
   display: block; 
+}
+
+.dropdown-option {
+  padding: 5px 10px;
+  background: transparent;
+  border: 0;
+  transition: ease;
+}
+
+.dropdown-option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px) brightness(110%);
+  transform: scale(1.01);
 }
