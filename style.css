@@ -136,23 +136,22 @@ body {
   font-family: "SF Pro Display";
   background-color: var(--cont-color);
   color: var(--text-color);
+  padding: 5px;
 }
 
-/* Custom Dropdown Main Container */
 .custom-dropdown {
-  width: 120px; /* Changed to a fixed width so option sizes align perfectly */
+  width: 120px;
   font-family: "SF Pro Display";
   position: relative;
   cursor: pointer;
-  padding: 8px 12px; /* Uniform clean spacing */
+  padding: 8px 12px;
   background: var(--brighter-cont);
   color: var(--text-color);
   border: 0;
   border-radius: 16px;
-  box-sizing: border-box; /* Includes padding in width calculation */
+  box-sizing: border-box;
 }
 
-/* The Options Panel Box */
 .dropdown-options {
   font-family: "SF Pro Display";
   color: var(--text-color);
