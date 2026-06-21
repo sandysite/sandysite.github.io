@@ -139,6 +139,7 @@ body {
 }
 
 .custom-dropdown {
+  width: fit-content;
   font-family: "SF Pro Display";
   position: relative;
   cursor: pointer;
