@@ -138,18 +138,21 @@ body {
   color: var(--text-color);
 }
 
+/* Custom Dropdown Main Container */
 .custom-dropdown {
-  width: fit-content;
+  width: 120px; /* Changed to a fixed width so option sizes align perfectly */
   font-family: "SF Pro Display";
   position: relative;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 8px 12px; /* Uniform clean spacing */
   background: var(--brighter-cont);
   color: var(--text-color);
   border: 0;
   border-radius: 16px;
+  box-sizing: border-box; /* Includes padding in width calculation */
 }
 
+/* The Options Panel Box */
 .dropdown-options {
   font-family: "SF Pro Display";
   color: var(--text-color);
@@ -159,23 +162,41 @@ body {
   background: var(--brighter-cont);
   border: 0;
   border-radius: 16px;
+  width: 100%;
+  left: 0;
+  top: calc(100% + 5px);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .dropdown-options.open {
   display: block; 
+  animation: dropdownFadeIn 0.2s ease-out forwards;
 }
 
 .dropdown-option {
   font-family: "SF Pro Display";
-  padding: 5px 10px;
+  padding: 8px 12px;
   background: transparent;
   border: 0;
-  transition: ease;
+  transition: all 0.2s ease;
   color: var(--text-color);
+  box-sizing: border-box;
 }
 
 .dropdown-option:hover {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px) brightness(110%);
   transform: scale(1.01);
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
