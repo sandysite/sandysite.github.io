@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const optionsContainer = dropdown.querySelector('.dropdown-options');
         const options = dropdown.querySelectorAll('.dropdown-option');
 
-        // Open/Close toggle
+        // Toggle open class on click
         selectedContainer.addEventListener('click', (e) => {
             e.stopPropagation();
             optionsContainer.classList.toggle('open');
         });
 
-        // Choose a theme option
+        // Click individual list options
         options.forEach(option => {
             option.addEventListener('click', () => {
                 const themeName = option.getAttribute('data-theme');
@@ -21,26 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Close dropdown if clicking elsewhere
+        // Close dropdown when clicking anywhere else on the screen
         document.addEventListener('click', () => {
             optionsContainer.classList.remove('open');
         });
     }
 
-    // Apply selected theme variables
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         
         if (dropdown) {
             const textSpan = dropdown.querySelector('.selected-text');
             const displayString = theme.charAt(0).toUpperCase() + theme.slice(1);
-            textSpan.textContent = displayString; // Changes text safely now!
+            textSpan.textContent = displayString;
         }
 
         localStorage.setItem('theme', theme);
     }
 
-    // Load from memory
+    // Initialize layout on load
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 });

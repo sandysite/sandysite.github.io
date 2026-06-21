@@ -1,111 +1,59 @@
-/* 1. Default / Light Theme Variables */
+/* --- THEME CUSTOM VARIABLES (Set your own colors here) --- */
 :root {
-  color-scheme: light dark;
   --bg-color: #f7f7f7;
   --text-color: #000000;
   --cont-color: #9f9f9f;
-  --accent-color: #000000;
 }
 
-/* 2. Custom Theme Overrides */
 html[data-theme="dark"] {
   --bg-color: #101010;
   --text-color: #ffffff;
   --cont-color: #313131;
-  --accent-color: #ffffff;
 }
 
 html[data-theme="evil"] {
   --bg-color: #1a0000;
   --text-color: #ff3333;
   --cont-color: #4d0000;
-  --accent-color: #ff0000;
 }
 
 html[data-theme="forest"] {
   --bg-color: #0d1a0d;
   --text-color: #66cc66;
   --cont-color: #1a331a;
-  --accent-color: #00ff00;
 }
 
 html[data-theme="sand"] {
   --bg-color: #f4e8c1;
   --text-color: #5c4033;
   --cont-color: #e3c292;
-  --accent-color: #8b5a2b;
 }
 
-/* 3. Base Elements */
+/* --- BASE FUNCTIONAL STYLES --- */
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  background-size: 100%;
-  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .topbar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 15px 30px;
   background-color: var(--cont-color);
-  transition: background-color 0.3s ease;
 }
 
+/* --- CUSTOM DROPDOWN MECHANICS (Add your styling here) --- */
 .custom-dropdown {
   position: relative;
-  user-select: none;
   cursor: pointer;
-  border-radius: 16px;
-}
-
-.dropdown-selected {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  border: 2px solid var(--accent-color);
-  padding: 10px 15px;
-  border-radius: 6px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dropdown-selected::after {
-  content: '▼';
-  font-size: 0.8em;
-  margin-left: 10px;
-  color: var(--text-color);
 }
 
 .dropdown-options {
-  display: none;
+  display: none; /* Keeps options hidden until toggled */
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: var(--bg-color);
-  border: 2px solid var(--accent-color);
-  border-top: none;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 10;
-  box-sizing: border-box;
+  z-index: 999;
 }
 
+/* JavaScript toggles this class to show the options menu */
 .dropdown-options.open {
-  display: block;
-}
-
-.dropdown-option {
-  padding: 12px 15px;
-  color: var(--text-color);
-  transition: background-color 0.2s;
-}
-
-.dropdown-option:hover {
-  background-color: var(--cont-color);
+  display: block; 
 }
