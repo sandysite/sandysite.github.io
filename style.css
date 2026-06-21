@@ -104,8 +104,8 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="evil"] {
-  --bg-color: #1a0000;
-  --text-color: #ff3333;
+  --bg-color: linear-gradient(to bottom,#440404, #730404);
+  --text-color: #0a0a0a;
   --cont-color: #4d0000;
   --brighter-cont: #9a0000;
 }
