@@ -1,4 +1,4 @@
-/* 1. Default / Light Theme */
+/* 1. Default / Light Theme Variables */
 :root {
   color-scheme: light dark;
   --bg-color: #f7f7f7;
@@ -7,7 +7,7 @@
   --accent-color: #000000;
 }
 
-/* 2. Theme Overrides on :root */
+/* 2. Custom Theme Overrides */
 html[data-theme="dark"] {
   --bg-color: #101010;
   --text-color: #ffffff;
@@ -36,13 +36,14 @@ html[data-theme="sand"] {
   --accent-color: #8b5a2b;
 }
 
-/* 3. Base Styles using your var() rules */
+/* 3. Base Elements */
 body {
   background: var(--bg-color);
   color: var(--text-color);
   background-size: 100%;
   font-family: sans-serif;
   margin: 0;
+  padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -54,7 +55,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Custom Dropdown Styling */
+/* 4. Custom Dropdown Box Layout */
 .custom-dropdown {
   position: relative;
   width: 160px;
@@ -74,14 +75,16 @@ body {
   align-items: center;
 }
 
+/* Dropdown Arrow */
 .dropdown-selected::after {
   content: '▼';
   font-size: 0.8em;
   margin-left: 10px;
+  color: var(--text-color);
 }
 
 .dropdown-options {
-  display: none;
+  display: none; /* Hidden by default */
   position: absolute;
   top: 100%;
   left: 0;
@@ -92,14 +95,17 @@ body {
   border-radius: 0 0 6px 6px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   z-index: 10;
+  box-sizing: border-box;
 }
 
+/* Show when dropdown is open */
 .dropdown-options.open {
   display: block;
 }
 
 .dropdown-option {
   padding: 12px 15px;
+  color: var(--text-color);
   transition: background-color 0.2s;
 }
 

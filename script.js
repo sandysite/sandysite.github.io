@@ -1,19 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.getElementById('themeDropdown');
     
-    // Setup dropdown logic only if it exists on the current page
     if (dropdown) {
-        const selectedText = dropdown.querySelector('.dropdown-selected');
+        const selectedContainer = dropdown.querySelector('.dropdown-selected');
         const optionsContainer = dropdown.querySelector('.dropdown-options');
         const options = dropdown.querySelectorAll('.dropdown-option');
 
-        // Toggle dropdown open/closed
-        selectedText.addEventListener('click', (e) => {
+        // Open/Close toggle
+        selectedContainer.addEventListener('click', (e) => {
             e.stopPropagation();
             optionsContainer.classList.toggle('open');
         });
 
-        // Click an option to change the theme
+        // Choose a theme option
         options.forEach(option => {
             option.addEventListener('click', () => {
                 const themeName = option.getAttribute('data-theme');
@@ -22,29 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Close dropdown when clicking anywhere else
+        // Close dropdown if clicking elsewhere
         document.addEventListener('click', () => {
             optionsContainer.classList.remove('open');
         });
     }
 
-    // Apply the theme to the root HTML tag and update UI
+    // Apply selected theme variables
     function applyTheme(theme) {
-        // Sets <html data-theme="theme-name">
         document.documentElement.setAttribute('data-theme', theme);
         
-        // Update text on the dropdown if it is on this page
         if (dropdown) {
-            const selectedText = dropdown.querySelector('.dropdown-selected');
+            const textSpan = dropdown.querySelector('.selected-text');
             const displayString = theme.charAt(0).toUpperCase() + theme.slice(1);
-            selectedText.textContent = displayString;
+            textSpan.textContent = displayString; // Changes text safely now!
         }
 
-        // Save theme choice for other pages
         localStorage.setItem('theme', theme);
     }
 
-    // Load saved theme or fall back to light
+    // Load from memory
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 });
