@@ -93,33 +93,37 @@
   --bg-color: #f7f7f7;
   --text-color: #000000;
   --cont-color: #9f9f9f;
+  --brighter-cont: #f0f0f0;
 }
 
 html[data-theme="dark"] {
   --bg-color: #101010;
   --text-color: #ffffff;
-  --cont-color: #313131;
+  --cont-color: #272727;
+  --brighter-cont: #474747;
 }
 
 html[data-theme="evil"] {
   --bg-color: #1a0000;
   --text-color: #ff3333;
   --cont-color: #4d0000;
+  --brighter-cont: #9a0000;
 }
 
 html[data-theme="forest"] {
   --bg-color: #0d1a0d;
   --text-color: #66cc66;
   --cont-color: #1a331a;
+  --brighter-cont: #286b28;
 }
 
 html[data-theme="sand"] {
-  --bg-color: #f4e8c1;
-  --text-color: #5c4033;
-  --cont-color: #e3c292;
+  --bg-color: #fff4ce;
+  --text-color: #683d00;
+  --cont-color: #ffd699;
+  --brighter-cont: #ffdead; /* lol it says "dead" */
 }
 
-/* --- BASE FUNCTIONAL STYLES --- */
 body {
   font-family: "SF Pro Display";
   background: var(--bg-color);
@@ -131,6 +135,7 @@ body {
 .topbar {
   font-family: "SF Pro Display";
   background-color: var(--cont-color);
+  color: var(--text-color);
 }
 
 .custom-dropdown {
@@ -139,12 +144,14 @@ body {
   cursor: pointer;
   padding: 5px 10px;
   background: var(--cont-color);
+  color: var(--text-color);
   border: 0;
   border-radius: 16px;
 }
 
 .dropdown-options {
   font-family: "SF Pro Display";
+  color: var(--text-color);
   display: none;
   position: absolute;
   z-index: 999;
@@ -163,6 +170,7 @@ body {
   background: transparent;
   border: 0;
   transition: ease;
+  color: var(--text-color);
 }
 
 .dropdown-option:hover {
